@@ -27,6 +27,9 @@ html[class="/explore"] {
 }
 
 body {
+  background: url(assets/mountains-universe-1.png) no-repeat bottom center;
+  background-size: cover;
+
   font-family: 'Roboto', sans-serif;
 
   min-height: 100vh;
