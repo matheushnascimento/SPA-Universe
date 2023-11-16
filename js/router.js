@@ -22,5 +22,26 @@ export class Router {
       .then(html => {
         document.querySelector("main").innerHTML = html;
       });
+
+    this.handleStyle(pathname);
+  }
+
+  handleStyle(pathname) {
+    document.documentElement.className = "";
+    document.documentElement.classList.add(pathname);
+
+    const links = document.querySelectorAll("a");
+
+    links.forEach(link => {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        links.forEach(link => {
+          link.classList.remove("selected");
+        });
+
+        this.classList.add("selected");
+      });
+    });
   }
 }
